@@ -1,0 +1,88 @@
+{
+	"total": 7,
+	"rows": [{
+		"itemid":"1",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	},{
+		"itemid":"2",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	},{
+		"itemid":"3",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	},{
+		"itemid":"4",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	},{
+		"itemid":"5",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	},{
+		"itemid":"6",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	},{
+		"itemid":"7",
+		"major":"变电",
+		"class":"变电一次设备",
+		"type":"DRYAISS",
+		"typeDescribe":"干式空心电抗器",
+		"Number":"是",
+		"wbs":"",
+		"group":"G012002",
+		"groupDescribe":"并联电抗器",
+		"rule":"物料＋设备与特性对应"
+		
+	} ]
+}

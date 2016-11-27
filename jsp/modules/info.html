@@ -1,0 +1,116 @@
+<form method="post">
+    <table width="100%" border="0" cellpadding="2" cellspacing="8">
+        <tr>
+            <td align="right" width="100">专业分类</td>
+            <td>
+                <select class="easyui-combobox w143" name="language">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </td>
+            <td align="right" width="100">设备大类</td>
+            <td>
+                <select class="easyui-combobox w143" name="language">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </td>
+            <td align="right" width="100">设备类型</td>
+            <td>
+                <input class="easyui-textbox" type="text" name="name" data-options="required:true">
+                <div class="easyui-linkbutton">
+                    <a href="javascript:void(0)" class="textbox-icon searchbox-button"></a>
+                    清除&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">物科组</td>
+            <td>
+                <input class="easyui-textbox" type="text" name="name" data-options="required:true">
+                <div class="easyui-linkbutton">
+                    <a href="javascript:void(0)" class="textbox-icon searchbox-button"></a>
+                    清除&nbsp;&nbsp;
+                </div>
+
+            </td>
+            <td align="right">转换规则</td>
+            <td>
+                <select class="easyui-combobox w143" name="language">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><a href="javascript:void(0)" class="easyui-linkbutton" onClick="submitForm()">Submit</a></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+<table id="infoTab" title="物料设备转换规则" style="width: 98%"
+       data-options="rownumbers:true,singleSelect:true,pagination:true,url:'json/info-rule.json',method:'get',toolbar:'#tb'">
+    <thead>
+    <tr>
+        <th data-options="field:'itemid',width:80">序号</th>
+        <th data-options="field:'major',width:100,">专业分类</th>
+        <th data-options="field:'class',width:80,align:'right'">设备大类</th>
+        <th data-options="field:'type',width:80,align:'right'">设备类型</th>
+        <th data-options="field:'typeDescribe',width:240">设备类型描述</th>
+        <th data-options="field:'Number',width:60,align:'center'">是否拆分数量</th>
+        <th data-options="field:'wbs',width:60,align:'center'">WBS</th>
+        <th data-options="field:'group',width:60,align:'center'">物料组</th>
+        <th data-options="field:'groupDescribe',width:60,align:'center'">物料组描述</th>
+        <th data-options="field:'rule',fit:true,align:'center'">转换规则</th>
+    </tr>
+    </thead>
+</table>
+<div class="h20"></div>
+<table class="easyui-datagrid" title="转换规则特性信息" style="width: 98%"
+       data-options="
+				url:'json/info-rule2.json',
+				method:'get'
+			">
+    <thead>
+    <tr>
+        <th data-options="field:'itemid',sortable:true">特征编码</th>
+        <th data-options="field:'productid',width:100,sortable:true">特征描述</th>
+        <th data-options="field:'listprice',width:80,align:'right',sortable:true">特性值</th>
+        <th data-options="field:'unitcost',width:80,align:'right',sortable:true">特性值描述</th>
+    </tr>
+    </thead>
+</table>
+<div id="tb" style="padding:2px 5px;">
+    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append(this)" value="新增">新增</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append(this)" value="复制新增">复制新增</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="append(this)" value="修改">修改</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="removeit()">删除</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="getChanges()">显示</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">物料组一致性检查</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">无需对应物料组维护</a>
+</div>
+<script type="text/javascript">
+    $(function(){
+        //file:///C:/Users/dell-pc/Desktop/11/jquery-easyui-v1.5/demo/datagrid/rowediting.html
+        var pager = $('#infoTab').datagrid().datagrid('getPager');	// get the pager of datagrid
+
+    })
+</script>

@@ -1,0 +1,74 @@
+
+				<form method="post">
+				    <table width="100%" border="0" cellpadding="2" cellspacing="8">
+				        <tr>
+				            <td align="right" width="100">
+				            	<div class="easyui-linkbutton">
+				                    <a href="javascript:append()" class="textbox-icon icon-add"></a>
+				                    生成设备
+				                </div>
+				            </td>
+				            <td align="right" width="100">
+				            	<div class="easyui-linkbutton">
+				                    <a href="javascript:append()" class="textbox-icon icon-add"></a>
+				                    新增设备
+				                </div>
+				            </td>
+				            <td>
+				            	<div class="easyui-linkbutton">
+				                    <a href="javascript:append()" class="textbox-icon icon-add"></a>
+				                    挂接设备
+				                </div>
+				            </td>
+				            <td></td>
+				            <td>
+				                <select class="easyui-combobox w143" name="show">
+				                    <option value="all" selected>显示全部物料</option>
+				                    <option value="done">显示已挂接物料</option>
+				                    <option value="undone">显示未挂接物料</option>
+				                </select>
+				            </td>
+				        </tr>
+				    </table>
+				</form>
+				<table class="table" style="width:100%;height:400px;"
+								data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get'">
+						<thead>
+							<tr>
+								<th data-options="field:'ck',checkbox:true"></th>
+								<th data-options="field:'itemid',width:80">采购订单号</th>
+								<th data-options="field:'productid',width:100">物料编码</th>
+								<th data-options="field:'listprice',width:80,align:'right'">物料描述</th>
+								<th data-options="field:'unitcost',width:80,align:'right'">物料组编码</th>
+								<th data-options="field:'attr1',width:240">物料组描述</th>
+								<th data-options="field:'status',width:60,align:'center'">采购总数</th>
+							</tr>
+						</thead>
+				</table>
+
+
+	<script type="text/javascript">
+		$(function(){
+			var pager = $('.table').datagrid().datagrid('getPager');	// get the pager of datagrid
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-search',
+					handler:function(){
+						alert('search');
+					}
+				},{
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add');
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						alert('edit');
+					}
+				}]
+			});	
+
+	
+		})
+	</script>

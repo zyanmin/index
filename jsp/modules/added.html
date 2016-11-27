@@ -1,0 +1,92 @@
+<form method="post">
+    <table width="100%" border="0" cellpadding="2" cellspacing="8">
+        <tr>
+            <td align="right" width="100">专业分类<span class="red">*</span></td>
+            <td>
+                <select class="easyui-combobox w143" name="language">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </td>
+            <td align="right" width="100">设备大类<span class="red">*</span></td>
+            <td>
+                <select class="easyui-combobox w143" name="language">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </td>
+            <td align="right" width="100">设备类型<span class="red">*</span></td>
+            <td>
+                <input class="easyui-textbox" type="text" name="name" data-options="required:true">
+                <div class="easyui-linkbutton">
+                    <a href="javascript:void(0)" class="textbox-icon searchbox-button"></a>
+                    清除&nbsp;&nbsp;
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">物科组<span class="red">*</span></td>
+            <td>
+                <input class="easyui-textbox" type="text" name="name" data-options="required:true">
+                <div class="easyui-linkbutton">
+                    <a href="javascript:void(0)" class="textbox-icon searchbox-button"></a>
+                    清除&nbsp;&nbsp;
+                </div>
+
+            </td>
+            <td align="right">转换规则</td>
+            <td>
+                <select class="easyui-combobox w143" name="language">
+                    <option value="Arabic">Arabic</option>
+                    <option value="Slovenian">Slovenian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Turkish">Turkish</option>
+                </select>
+            </td>
+            <td align="right">仅显示主设备</td>
+            <td><input type="checkbox" name="checkbox" id="checkbox"></td>
+        </tr>
+        <tr>
+            <td align="right">是否拆分数量</td>
+            <td><input type="checkbox" name="checkbox" id="checkbox"></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><a href="javascript:void(0)" class="easyui-linkbutton" onClick="submitForm()">Submit</a></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+
+<table id="addedTab1" title="转换规则特性信息" style="width: 98%"
+       data-options="
+				singleSelect: true,
+				url: 'json/datagrid_data1.json',
+				method:'get'
+			">
+    <thead>
+    <tr>
+        <th data-options="field:'itemid',width:80">特征编码</th>
+        <th data-options="field:'productid',width:100">特征描述</th>
+        <th data-options="field:'listprice',width:80,align:'right',editor:'text'">特性值</th>
+        <th data-options="field:'unitcost',width:80,align:'right',editor:'text'">特性值描述</th>
+    </tr>
+    </thead>
+</table>

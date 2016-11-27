@@ -1,0 +1,165 @@
+<!-- 验收 -->
+	<div class="easyui-tabs" style="width:100%;height:100%">
+		<form id="check－form" method="post">
+		    <table width="100%" border="0" cellpadding="2" cellspacing="8">
+		        <tr>
+		            <td align="right" width="100">公司代码</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true">
+		            </td>
+		            <td align="right" width="100">项目定义</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true">
+		            </td>
+		            <td align="right" width="100">设备大类</td>
+		            <td>
+		                <select class="easyui-combobox w143" name="language">
+		                    <option value="Arabic">Arabic</option>
+		                    <option value="Slovenian">Slovenian</option>
+		                    <option value="Spanish">Spanish</option>
+		                    <option value="Swedish">Swedish</option>
+		                    <option value="Thai">Thai</option>
+		                    <option value="Turkish">Turkish</option>
+		                </select>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td align="right"><input type="checkbox" name="isChecked" value="1" width="100"/></td>
+		            <td>是否包含已验收状态</td>
+		            <td align="right">
+		            	
+		            	<div class="easyui-linkbutton">
+		                    <a href="javascript:void(0)" class="textbox-icon searchbox-button"></a>
+		                    查询&nbsp;&nbsp;
+		                </div>
+		            </td>
+		            <td>
+		            	<a href="javascript:void(0)" class="easyui-linkbutton" href="javascript:void(0)">验收</a>
+		            </td>
+		            <td align="right">
+		            	<a href="javascript:void(0)" class="easyui-linkbutton" href="javascript:void(0)" onclick="exportfile();">导出</a>
+		            	<a href="javascript:void(0)" class="easyui-linkbutton" href="javascript:void(0)">导入</a>
+		            </td>
+		            <td>
+		            	<div class="easyui-linkbutton">
+		                     <a href="#" class="easyui-linkbutton"  plain="true"></a>在线维护&nbsp;&nbsp;
+		                </div>
+		            	
+		            </td>
+		        </tr>
+		    </table>
+		</form>
+		<div title="变电设备清单">
+		    <table id="check-table" class="clearfix"  style="width:100%;height:70%" data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get',toolbar:'#check-tb'">
+					<thead>
+						<tr>
+							<th data-options="field:'ck',checkbox:true"></th>
+							<th data-options="field:'itemid',width:80">设备编码</th>
+							<th data-options="field:'productid',width:100">设备描述</th>
+							<th data-options="field:'listprice',width:80,align:'right'">设备类型</th>
+							<th data-options="field:'unitcost',width:80,align:'right'">设备状态</th>
+							<th data-options="field:'attr1',width:240">电压等级</th>
+							<th data-options="field:'status',width:60,align:'center'">公司代码</th>
+							<th data-options="field:'a',width:60,align:'center'">项目定义</th>
+							<th data-options="field:'b',width:60,align:'center'">项目描述</th>
+							<th data-options="field:'isMain',width:60,align:'center'">是否主设备</th>
+							<th data-options="field:'sta',width:60,align:'center'">BOM状态</th>
+						</tr>
+					</thead>
+			</table>
+			<div id="check-tb" style="padding:2px 5px;">
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append()">新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true">复制新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="removeit()">删除</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="getChanges()">显示</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">物料组一致性检查</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">无需对应物料组维护</a>
+			</div>
+		</div>
+		<div title="输电设备清单">
+		    <table id="check-table1" class="clearfix"  style="width:100%;height:70%" data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get',toolbar:'#check-tb1'">
+					<thead>
+						<tr>
+							<th data-options="field:'ck',checkbox:true"></th>
+							<th data-options="field:'itemid',width:80">设备编码</th>
+							<th data-options="field:'productid',width:100">设备描述</th>
+							<th data-options="field:'listprice',width:80,align:'right'">设备类型</th>
+							<th data-options="field:'unitcost',width:80,align:'right'">设备状态</th>
+							<th data-options="field:'attr1',width:240">电压等级</th>
+							<th data-options="field:'status',width:60,align:'center'">公司代码</th>
+							<th data-options="field:'a',width:60,align:'center'">项目定义</th>
+							<th data-options="field:'b',width:60,align:'center'">项目描述</th>
+							<th data-options="field:'isMain',width:60,align:'center'">是否主设备</th>
+							<th data-options="field:'sta',width:60,align:'center'">BOM状态</th>
+						</tr>
+					</thead>
+			</table>
+			<div id="check-tb1" style="padding:2px 5px;">
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append()">新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true">复制新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="removeit()">删除</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="getChanges()">显示</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">物料组一致性检查</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">无需对应物料组维护</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dlg" class="easyui-dialog" title="文件下载" style="width:400px;height:150px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				buttons: '#dlg-buttons',
+    			closed: true
+			">
+		你想导出此文件.xls吗？
+	</div>
+	<div id="dlg-buttons" class＝'tc'>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:alert('save');$('#dlg').dialog('close')">保存</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var pager = $('#check-table').datagrid().datagrid('getPager');// get the pager of datagrid	
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-search',
+					handler:function(){
+						alert('search');
+					}
+				},{
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add');
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						alert('edit');
+					}
+				}]
+			});	
+
+			var pager = $('#check-table1').datagrid().datagrid('getPager');// get the pager of datagrid	
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-search',
+					handler:function(){
+						alert('search');
+					}
+				},{
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add');
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						alert('edit');
+					}
+				}]
+			});			
+		})
+	</script>

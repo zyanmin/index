@@ -1,0 +1,173 @@
+
+
+
+	<div class="easyui-layout" style="width:100%;height:100%;">
+		<div id="jjgc-p" data-options="region:'west'"  style="width:30%;padding:10px">
+			
+			<div class="easyui-tabs" style="width:100%;height:100%"> 
+				<div title="项目树">
+					<ul class="easyui-tree jjgc-refresh_btn" id="jjgc-menu" data-options="url:'json/search.json',method:'get',animate:true"></ul>
+				</div>
+				<div title="项目查询" style="padding:10px">
+					<ul class="easyui-tree jjgc-refresh_btn" data-options="url:'json/tree.json',method:'get',animate:true"></ul>
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center'" >
+			<div class="easyui-accordion " id="aa" style="width:100%;" >
+				<div style="width:100%;"  class="refresh"  title="项目基础信息">
+				    <table  border="0" cellpadding="2"  title="信息">
+				        <tr>
+				            <td align="right" width="100">公司代码</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">项目定义</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">项目描述</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">项目状态</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">项目类型</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				        </tr>
+				        <tr>
+				            <td align="right" width="100">项目年度</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">电压等级</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">项目联系人</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100">项目成本</td>
+				            <td>
+				                <input class="easyui-textbox" type="text" style="width:60px;" data-options="required:true"/>
+				            </td>
+				            <td align="right" width="100"><a href="#">隐藏</a></td>
+				            <td>
+				                
+				            </td>
+				        </tr>
+				    </table>
+				</div>
+				<div style="width:100%; height:400px;" selected="true"  title="项目成本信息">
+					<table class="jjgc-table" style="width:100%;height:100%"
+									data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get'">
+							<thead>
+								<tr>
+									<th data-options="field:'ck',checkbox:true"></th>
+									<th data-options="field:'itemid',width:80">采购订单号</th>
+									<th data-options="field:'productid',width:100">物料编码</th>
+									<th data-options="field:'listprice',width:80,align:'right'">物料描述</th>
+									<th data-options="field:'unitcost',width:80,align:'right'">物料组编码</th>
+									<th data-options="field:'attr1',width:240">物料组描述</th>
+									<th data-options="field:'status',width:60,align:'center'">采购总数</th>
+								</tr>
+							</thead>
+					</table>
+				</div>
+				<div style="width:100%; height:400px;"  title="转资信息">
+					<table class="jjgc-table" style="width:100%;height:100%"
+									data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get'">
+							<thead>
+								<tr>
+									<th data-options="field:'ck',checkbox:true"></th>
+									<th data-options="field:'itemid',width:80">采购订单号</th>
+									<th data-options="field:'productid',width:100">物料编码</th>
+									<th data-options="field:'listprice',width:80,align:'right'">物料描述</th>
+									<th data-options="field:'unitcost',width:80,align:'right'">物料组编码</th>
+									<th data-options="field:'attr1',width:240">物料组描述</th>
+									<th data-options="field:'status',width:60,align:'center'">采购总数</th>
+								</tr>
+							</thead>
+					</table>
+				</div>
+				<div style="width:100%; height:400px;"  title="转出资产价值信息">
+					<table class="jjgc-table" style="width:100%;height:100%"
+									data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get'">
+							<thead>
+								<tr>
+									<th data-options="field:'ck',checkbox:true"></th>
+									<th data-options="field:'itemid',width:80">采购订单号</th>
+									<th data-options="field:'productid',width:100">物料编码</th>
+									<th data-options="field:'listprice',width:80,align:'right'">物料描述</th>
+									<th data-options="field:'unitcost',width:80,align:'right'">物料组编码</th>
+									<th data-options="field:'attr1',width:240">物料组描述</th>
+									<th data-options="field:'status',width:60,align:'center'">采购总数</th>
+								</tr>
+							</thead>
+					</table>
+				</div>
+				<div style="width:100%; height:400px;"  title="转资主表单">
+					<table class="jjgc-table" style="width:100%;height:100%"
+									data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get'">
+							<thead>
+								<tr>
+									<th data-options="field:'ck',checkbox:true"></th>
+									<th data-options="field:'itemid',width:80">采购订单号</th>
+									<th data-options="field:'productid',width:100">物料编码</th>
+									<th data-options="field:'listprice',width:80,align:'right'">物料描述</th>
+									<th data-options="field:'unitcost',width:80,align:'right'">物料组编码</th>
+									<th data-options="field:'attr1',width:240">物料组描述</th>
+									<th data-options="field:'status',width:60,align:'center'">采购总数</th>
+								</tr>
+							</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var pager = $('.jjgc-table').datagrid().datagrid('getPager');	// get the pager of datagrid
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-search',
+					handler:function(){
+						alert('search');
+					}
+				},{
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add');
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						alert('edit');
+					}
+				}]
+			});	
+
+
+        $('.jjgc-refresh_btn').tree({
+            animate:true,
+            onClick: function(node){
+                //alert(node.text);  // alert node text property when clicked
+                //alert(node.attributes.url)
+                //alert(node.attributes.url)
+                // alert(node.id)
+                if($('.jjgc-refresh_btn').tree('isLeaf',node.target)){
+         //           	    var pp = $('#aa').accordion('getSelected'); // 获取选中的面板（panel）
+					    // if (pp){
+					    //     pp.panel('refresh','modules/table.html'); // 调用 'refresh' 方法加载新内容
+					    // }
+					    $('.jjgc-table').datagrid('reload');
+                }
+            }
+        });		
+		})
+	</script>

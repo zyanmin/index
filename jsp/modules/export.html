@@ -1,0 +1,174 @@
+
+
+<!-- 导出 -->
+	<div class="easyui-layout" style="width:100%;height:100%;">
+		<div id="export-p" data-options="region:'west'"  style="width:30%;padding:10px">
+			
+			<div class="easyui-tabs" style="width:100%;height:100%"> 
+				<div title="项目树">
+					<ul class="easyui-tree export-refresh_btn" data-options="url:'json/search.json',method:'get',animate:true"></ul>
+				</div>
+				<div title="项目查询" style="padding:10px">
+					<ul class="easyui-tree export-refresh_btn" data-options="url:'json/tree.json',method:'get',animate:true"></ul>
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center'" >
+
+			<div class="easyui-tabs" style="width:100%;height:100%">
+		<form id="check－form" method="post">
+		    <table width="100%" border="0" cellpadding="2" cellspacing="8">
+		        <tr>
+		            <td align="right" width="100">公司代码</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true" value="ssb" disabled>
+		            </td>
+		            <td align="right" width="100">项目定义</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true" value="电力规划" disabled>
+		            </td>
+		            <td align="right" width="100">设备大类</td>
+		            <td>
+		                <select class="easyui-combobox w143" name="language">
+		                    <option value="Arabic">Arabic</option>
+		                    <option value="Slovenian">Slovenian</option>
+		                    <option value="Spanish">Spanish</option>
+		                    <option value="Swedish">Swedish</option>
+		                    <option value="Thai">Thai</option>
+		                    <option value="Turkish">Turkish</option>
+		                </select>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td align="right" width="100">设备描述</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true" >
+		            </td>
+		            <td align="right" width="100">设备编码</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true" >
+		            </td>
+		            <td align="right" width="100">供应商编码</td>
+		            <td>
+		                <input class="easyui-textbox" type="text" name="company-id" data-options="required:true" >
+		            </td>
+		        </tr>
+		        <tr>
+		            <td align="right">
+		            	<div class="easyui-linkbutton">
+		                    <a href="javascript:void(0)" class="textbox-icon searchbox-button"></a>
+		                    查询&nbsp;&nbsp;
+		                </div>
+		            </td>
+		            <td>
+		            	<a href="javascript:download()" class="easyui-linkbutton">下载</a>
+		            </td>
+		            <td align="right"></td>
+		            <td></td>
+		            <td align="right">
+		            </td>
+		            <td>
+		            </td>
+		        </tr>
+		    </table>
+		</form>
+		<div title="主设备清单">
+		    <table id="export-table" class="clearfix"  style="width:100%;height:70%" data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get',toolbar:'#export-tb'">
+					<thead>
+						<tr>
+							<th data-options="field:'ck',checkbox:true"></th>
+							<th data-options="field:'itemid',width:80">设备编码</th>
+							<th data-options="field:'productid',width:100">设备描述</th>
+							<th data-options="field:'listprice',width:80,align:'right'">设备类型</th>
+							<th data-options="field:'unitcost',width:80,align:'right'">设备状态</th>
+							<th data-options="field:'attr1',width:240">电压等级</th>
+							<th data-options="field:'status',width:60,align:'center'">公司代码</th>
+							<th data-options="field:'a',width:60,align:'center'">项目定义</th>
+							<th data-options="field:'b',width:60,align:'center'">项目描述</th>
+							<th data-options="field:'isMain',width:60,align:'center'">是否主设备</th>
+							<th data-options="field:'sta',width:60,align:'center'">BOM状态</th>
+						</tr>
+					</thead>
+			</table>
+			<div id="export-tb" style="padding:2px 5px;">
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append()">新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append()">复制新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="append()">修改</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="removeit()">删除</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="getChanges()">显示</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">物料组一致性检查</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">无需对应物料组维护</a>
+			</div>
+		</div>
+		<div title="独立子设备清单">
+		    <table id="export-table1" class="clearfix"  style="width:100%;height:70%" data-options="rownumbers:true,singleSelect:(this.value==1),pagination:true,url:'json/datagrid_data1.json',method:'get',toolbar:'#export-tb1'">
+					<thead>
+						<tr>
+							<th data-options="field:'ck',checkbox:true"></th>
+							<th data-options="field:'itemid',width:80">设备编码</th>
+							<th data-options="field:'productid',width:100">设备描述</th>
+							<th data-options="field:'listprice',width:80,align:'right'">设备类型</th>
+							<th data-options="field:'unitcost',width:80,align:'right'">设备状态</th>
+							<th data-options="field:'attr1',width:240">电压等级</th>
+							<th data-options="field:'status',width:60,align:'center'">公司代码</th>
+							<th data-options="field:'a',width:60,align:'center'">项目定义</th>
+							<th data-options="field:'b',width:60,align:'center'">项目描述</th>
+							<th data-options="field:'isMain',width:60,align:'center'">是否主设备</th>
+							<th data-options="field:'sta',width:60,align:'center'">BOM状态</th>
+						</tr>
+					</thead>
+			</table>
+			<div id="export-tb1" style="padding:2px 5px;">
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append()">新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="append()">复制新增</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="append()">修改</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-no" plain="true" onclick="removeit()">删除</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="getChanges()">显示</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">物料组一致性检查</a>
+			    <a href="#" class="easyui-linkbutton" iconCls="icon-tool" plain="true">无需对应物料组维护</a>
+			</div>
+		</div>
+	</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var pager = $('#export-table,#export-table1').datagrid().datagrid('getPager');	// get the pager of datagrid
+			pager.pagination({
+				buttons:[{
+					iconCls:'icon-search',
+					handler:function(){
+						alert('search');
+					}
+				},{
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add');
+					}
+				},{
+					iconCls:'icon-edit',
+					handler:function(){
+						alert('edit');
+					}
+				}]
+			});	
+
+
+	        $('.export-refresh_btn').tree({
+	            animate:true,
+	            onClick: function(node){
+	                //alert(node.text);  // alert node text property when clicked
+	                //alert(node.attributes.url)
+	                //alert(node.attributes.url)
+	                // alert(node.id)ßß
+	                if($('.export-refresh_btn').tree('isLeaf',node.target)){
+	         //           	    var pp = $('#aa').accordion('getSelected'); // 获取选中的面板（panel）
+						    // if (pp){
+						    //     pp.panel('refresh','modules/table.html'); // 调用 'refresh' 方法加载新内容
+						    // }
+						    $('#export-table,#export-table1').datagrid('reload');
+	                }
+	            }
+	        });	
+		})
+	</script>
